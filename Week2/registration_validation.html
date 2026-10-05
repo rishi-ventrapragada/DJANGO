@@ -1,0 +1,115 @@
+<!-- WEEK2: Implement a JavaScript Program to Validate Registration Page using
+     Regular Expression. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form with Validation</title>
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <form id="registrationForm">
+    <p>
+      <label for="username">User Name:</label><br>
+      <input type="text" id="username" name="username" placeholder="Username">
+    </p>
+
+    <p>
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" name="password" placeholder="Password">
+    </p>
+
+    <p>
+      <label for="dob">Date of Birth:</label><br>
+      <input type="date" id="dob" name="dob">
+    </p>
+
+    <p>
+      <label>Gender:</label><br>
+      <input type="radio" name="gender" value="male"> Male
+      <input type="radio" name="gender" value="female"> Female
+      <input type="radio" name="gender" value="other"> Other
+    </p>
+
+    <p>
+      <label for="email">Mail-id:</label><br>
+      <input type="email" id="email" name="email" placeholder="Email id">
+    </p>
+
+    <p>
+      <label for="contact">Contact Number:</label><br>
+      <input type="tel" id="contact" name="contact" placeholder="10-digit number">
+    </p>
+
+    <p>
+      <label for="address">Address:</label><br>
+      <textarea id="address" name="address" rows="3" placeholder="address"></textarea>
+    </p>
+
+    <p>
+      <button type="submit">Submit</button>
+    </p>
+  </form>
+
+  <script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent default submission
+
+      // Collect values
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const dob = document.getElementById("dob").value;
+      const gender = document.querySelector('input[name="gender"]:checked');
+      const email = document.getElementById("email").value.trim();
+      const contact = document.getElementById("contact").value.trim();
+      const address = document.getElementById("address").value.trim();
+
+      // Regex patterns
+      const usernameRegex = /^[A-Za-z0-9_]{3,15}$/; // 3–15 chars, letters, numbers, underscore
+      const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/; // min 6 chars, at least 1 letter & 1 number
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // basic email format
+      const contactRegex = /^[0-9]{10}$/; // exactly 10 digits
+
+      // Validation checks
+      if (!usernameRegex.test(username)) {
+        alert("Invalid Username: Use 3–15 letters, numbers, or underscores.");
+        return;
+      }
+
+      if (!passwordRegex.test(password)) {
+        alert("Invalid Password: Must be at least 6 characters with letters and numbers.");
+        return;
+      }
+
+      if (!dob) {
+        alert("Please enter your Date of Birth.");
+        return;
+      }
+
+      if (!gender) {
+        alert("Please select your Gender.");
+        return;
+      }
+
+      if (!emailRegex.test(email)) {
+        alert("Invalid Email format.");
+        return;
+      }
+
+      if (!contactRegex.test(contact)) {
+        alert("Invalid Contact Number: Must be exactly 10 digits.");
+        return;
+      }
+
+      if (address.length < 5) {
+        alert("Address must be at least 5 characters long.");
+        return;
+      }
+
+      // If all validations pass
+      alert("Form submitted successfully!");
+    });
+  </script>
+</body>
+</html>

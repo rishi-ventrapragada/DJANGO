@@ -1,0 +1,50 @@
+<!-- WEEK1: Build a Responsive Web Application for Registration Form, which
+     contains User Name, Password, Date of Birth, Gender, Mail-id, Contact Number,
+     Address and Submit Button. -->
+<!-- STATIC REGISTRATION FORM - HTML -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <form>
+    <p>
+      <label for="username">User Name:</label><br>
+      <input type="text" id="username" name="username" required>
+    </p>
+    <p>
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" name="password" required>
+    </p>
+    <p>
+      <label for="dob">Date of Birth:</label><br>
+      <input type="date" id="dob" name="dob" required>
+    </p>
+    <p>
+      <label>Gender:</label><br>
+      <input type="radio" name="gender" value="male" required> Male
+      <input type="radio" name="gender" value="female" required> Female
+      <input type="radio" name="gender" value="other" required> Other
+    </p>
+    <p>
+      <label for="email">Mail-id:</label><br>
+      <input type="email" id="email" name="email" required>
+    </p>
+    <p>
+      <label for="contact">Contact Number:</label><br>
+      <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" placeholder="10-digit number" required>
+    </p>
+    <p>
+      <label for="address">Address:</label><br>
+      <textarea id="address" name="address" rows="3" required></textarea>
+    </p>
+    <p>
+      <button type="submit">Submit</button>
+    </p>
+  </form>
+</body>
+</html>

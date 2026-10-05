@@ -1,0 +1,35 @@
+WEEK5: Create a shopping cart web application and add a customized admin
+page for product catalog management for Experiment 3
+
+Project Structure:
+shopping_cart/
+├── manage.py
+├── shopping_cart/          # Project settings
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── shop/                   # Main app
+    ├── __init__.py
+    ├── admin.py
+    ├── apps.py
+    ├── models.py
+    ├── views.py
+    ├── urls.py
+    ├── forms.py
+    └── templates/
+        ├── base.html
+        ├── registration.html
+        ├── login.html
+        ├── catalog.html
+        └── cart.html
+
+Commands
+    python manage.py makemigrations
+    python manage.py migrate
+
+Create Superuser:
+    python manage.py createsuperuser
+
+Run Application:
+    python manage.py runserver

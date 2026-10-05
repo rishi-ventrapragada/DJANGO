@@ -1,0 +1,52 @@
+WEEK7: Create a Quiz Application using Django Framework along with SQLite3.
+
+Steps:
+    #Create an Environment
+    python -m venv week7
+    week7\Scripts\activate
+
+    # Install Django if not already
+    pip install django
+
+    # Create a new Django project
+    django-admin startproject quiz_app
+
+    cd quiz_app
+
+    # Create a quiz application inside the project
+    python manage.py startapp quiz
+
+quiz_app/                       # Root project folder
+│
+├── manage.py                   # Django command-line utility
+│
+├── quiz_app/                   # Project settings & configuration
+│   ├── __init__.py
+│   ├── settings.py             # Global settings (DB, installed apps, etc.)
+│   ├── urls.py                 # Root URL routing
+│   ├── asgi.py                 # ASGI entry point
+│   └── wsgi.py                 # WSGI entry point
+│
+├── quiz/                       # Our quiz application
+│   ├── __init__.py
+│   ├── admin.py                # Register models for Django admin
+│   ├── apps.py                 # App configuration
+│   ├── models.py               # Database models (Question, Choice)
+│   ├── views.py                # Business logic (quiz & results)
+│   ├── urls.py                 # App-specific URL routing
+│   ├── tests.py                # Unit tests
+│   ├── migrations/             # Auto-generated DB migrations
+│   │   └── __init__.py
+│   └── templates/quiz/         # HTML templates
+│       ├── quiz.html           # Quiz page
+│       └── result.html         # Results page
+│
+├── db.sqlite3                  # SQLite3 database file
+└── static/                     # (Optional) static files (CSS, JS, images)
+
+Migrate database:
+    python manage.py makemigrations
+    python manage.py migrate
+
+Run Project:
+    python manage.py runserver

@@ -1,0 +1,60 @@
+WEEK4: Basics of Django Framework & Installation of required Software's
+
+Step1: install Python (latest version)
+    python --version
+    pip --version
+    pip install virtualenv or venv
+
+    Create parent directory to save all Django projects
+    mkdir my_django_project
+    cd my_django_project
+
+Step2: create virtual Environment
+    python -m venv week4
+
+    Next, activate the environment
+    week4\Scripts\activate.bat        (or week4\Scripts\Activate.ps1 in PowerShell)
+
+Step3: install django
+    pip install django
+
+    to know the version
+    django-admin --version
+
+Step4: create Django project
+    django-admin startproject website        <- project name
+    cd website
+
+    to check successfully installed Django or not, runserver
+    python manage.py runserver
+    then get Django welcome page - means successfully django installed
+
+Step4.1: To create app
+    python manage.py startapp myapp
+
+    Create these files separately
+    HTML       - index.html
+    CSS        - style.css
+    Javascript - script.js
+
+Step4.2: create subfolders in myapp
+    static    - add CSS and js files
+    templates - HTML files
+
+    Project Structure
+    website/
+    ├── myapp/
+    │   ├── templates/
+    │   │   └── myapp/
+    │   │       └── index.html
+    │   ├── static/
+    │   │   └── myapp/
+    │   │       ├── style.css
+    │   │       └── script.js
+
+Step5: Configure Template directory and Static directory in settings.py
+Step6: Add myapp in INSTALLED_APPS in settings.py
+Step7: Write views.py, myapp/urls.py and website/urls.py
+
+Step9: Run application/project
+    python manage.py runserver

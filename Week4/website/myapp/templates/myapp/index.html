@@ -1,0 +1,13 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+  <script src="{% static 'myapp/script.js' %}"></script>
+</head>
+<body>
+  <h1>Welcome to My Django App</h1>
+  <button onclick="showMessage()">Click Me</button>
+  <p id="output"></p>
+</body>
+</html>

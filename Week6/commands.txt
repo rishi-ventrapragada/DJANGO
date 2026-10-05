@@ -1,0 +1,55 @@
+WEEK6: Demonstrate Cache, Session Management for Student Login Application.
+
+Project Structure
+student_login_project/
+│
+├── manage.py
+│
+├── student_login_project/      # Project configuration
+│   ├── __init__.py
+│   ├── settings.py             # Cache + session settings
+│   ├── urls.py                 # Project-level URL routing
+│   ├── asgi.py
+│   └── wsgi.py
+│
+├── studentlogin/               # App for student login
+│   ├── __init__.py
+│   ├── admin.py                # Register Student model
+│   ├── apps.py
+│   ├── models.py               # Student model (username, password)
+│   ├── views.py                # Login, logout, dashboard (cache + session + cookie)
+│   ├── urls.py                 # App-specific routes
+│   ├── forms.py                # (Optional) Django form for login
+│   ├── middleware.py           # (Optional) custom session/cookie checks
+│   └── templates/
+│       ├── login.html          # Login form
+│       └── dashboard.html      # Dashboard with logout link
+│
+└── db.sqlite3                  # Default database
+
+Step1: Create a environment
+Step2: Create Django Project - student_login_project
+Step3: Create App - studentlogin
+Step4: settings.py (INSTALLED_APPS, TEMPLATES, CACHES, SESSION_ENGINE)
+Step5: Create a Model - models.py
+Step6: Admin Module - admin.py
+Step7: views.py
+Step8: studentlogin/urls.py (app level) and student_login_project/urls.py (project level)
+Step9: Create Templates folder (studentlogin/templates) - login.html, dashboard.html
+
+Commands:
+    python manage.py makemigrations
+    python manage.py migrate
+
+    #Create superuser
+    python manage.py createsuperuser
+    Username: admin
+    Email address: admin@example.com
+    Password: ********
+    Password (again): ********
+    Superuser created successfully.
+
+    python manage.py runserver
+
+Visit:
+    http://127.0.0.1:8000/admin/
